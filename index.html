@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>A학교 공대위 후원하기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function copyAccount() {
+      const account = "3333-17-2448280 카카오뱅크 백종성";
+      navigator.clipboard.writeText(account)
+        .then(() => alert("계좌번호가 복사되었습니다!"))
+        .catch(err => alert("복사 실패: " + err));
+    }
+
+    function openApp(url) {
+      window.location.href = url;
+    }
+
+    function openIntro() {
+      window.location.href = "https://husky-cloak-daa.notion.site/A-1a4da37d5ce180e99db3e26e36bcd439?pvs=74";
+    }
+
+    function openVideo() {
+      window.location.href = "https://www.youtube.com/watch?v=lFxJs1lvJ6I";
+    }
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 90%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 18px;
+      background-color: #D72672;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background-color: #a71955;
+      transform: scale(1.03);
+    }
+    .section-title {
+      font-size: 20px;
+      margin-top: 30px;
+      color: #222;
+    }
+    .account-display {
+      margin-top: 15px;
+      font-size: 16px;
+      background: #f8f8f8;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      line-height: 1.6;
+    }
+    .bank-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* ← 한 줄에 2개씩 */
+      gap: 20px;
+      justify-items: center;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+
+    .bank-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      width: 90px;
+    }
+    .bank-item img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background: white;
+      transition: transform 0.2s;
+    }
+    .bank-item img:hover {
+      transform: scale(1.1);
+    }
+    .bank-name {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+    @media (max-width: 400px) {
+      .bank-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    /* 고정된 선생님 이모지 버튼 */
+    .floating-emoji {
+      position: fixed;
+      bottom: 80px; /* ← 여기 숫자를 키움! */
+      right: 20px;
+      font-size: 36px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .floating-emoji:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📢 A학교 투쟁을 응원해주세요!</h1>
+
+  <!-- 투쟁 소개 -->
+  <button class="btn" onclick="openIntro()">A학교 투쟁 알아보기</button>
+
+  <!-- 후원 계좌 -->
+  <div class="section-title">💸 후원 계좌</div>
+  <div class="account-display">
+    카카오뱅크<br>
+    3333-17-2448280<br>
+    백종성
+  </div>
+  <br>
+  <button class="btn" onclick="copyAccount()">계좌 복사하기</button>
+
+  <!-- 은행 앱 바로가기 -->
+  <div class="section-title">🏦 은행 앱 바로가기</div>
+  <div class="bank-container">
+    <div class="bank-item" onclick="openApp('supertoss://')">
+      <img src="https://play-lh.googleusercontent.com/Yoaqip2U7E9EKghfvnZW1OeanfbjaL3Qqn5TGVDYAqkbXsL3TDNyEp_oBPH5vAPro38=w480-h960-rw" alt="토스뱅크">
+      <div class="bank-name">토스뱅크</div>
+    </div>
+    <div class="bank-item" onclick="openApp('kbbank://')">
+      <img src="https://play-lh.googleusercontent.com/K1rBzVJjq9qtSxC2vkWIsp3GPtPOCwLPf1aCJ0tL0TvWdNcAKQKhYwjPMY90XJwyW-E=w480-h960-rw" alt="국민은행">
+      <div class="bank-name">국민은행</div>
+    </div>
+    <div class="bank-item" onclick="openApp('NewSmartPib://')">
+      <img src="https://play-lh.googleusercontent.com/X0F73sNd54RPhUJCMlRAINxhGKxw18jkBgw4E5F6dIs_7pL5Geg0xWt5taQwisw47ok=w480-h960-rw" alt="우리은행">
+      <div class="bank-name">우리은행</div>
+    </div>
+    <div class="bank-item" onclick="openApp('kakaobank://')">
+      <img src="https://play-lh.googleusercontent.com/6Z_MeUWUyXUmnE57yjYNKQdGvYHk_P8akfoZn0JZNZvsHAqtYFm4bi90m568nYgnqA=w480-h960-rw" alt="카카오뱅크">
+      <div class="bank-name">카카오뱅크</div>
+    </div>
+  </div>
+
+  <!-- 고정된 선생님 이모지 버튼 -->
+  <div class="floating-emoji" title="관련 영상 보기" onclick="openVideo()">👨‍🏫</div>
+
+</body>
+</html>
