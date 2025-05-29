@@ -30,10 +30,12 @@
       text-align: center;
       padding: 20px;
     }
+
     h1 {
       font-size: 24px;
       margin-bottom: 20px;
     }
+
     .btn {
       width: 90%;
       max-width: 400px;
@@ -47,15 +49,18 @@
       cursor: pointer;
       transition: background-color 0.3s, transform 0.2s;
     }
+
     .btn:hover {
       background-color: #a71955;
       transform: scale(1.03);
     }
+
     .section-title {
       font-size: 20px;
       margin-top: 30px;
       color: #222;
     }
+
     .account-display {
       margin-top: 15px;
       font-size: 16px;
@@ -65,9 +70,10 @@
       display: inline-block;
       line-height: 1.6;
     }
+
     .bank-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* ← 한 줄에 2개씩 */
+      grid-template-columns: repeat(2, 1fr); /* 2개씩 두 줄로 */
       gap: 20px;
       justify-items: center;
       margin-top: 30px;
@@ -81,6 +87,7 @@
       cursor: pointer;
       width: 90px;
     }
+
     .bank-item img {
       width: 70px;
       height: 70px;
@@ -91,32 +98,45 @@
       background: white;
       transition: transform 0.2s;
     }
+
     .bank-item img:hover {
       transform: scale(1.1);
     }
+
     .bank-name {
       margin-top: 8px;
       font-size: 14px;
       color: #333;
     }
-    @media (max-width: 400px) {
-      .bank-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    /* 고정된 선생님 이모지 버튼 */
-    .floating-emoji {
+
+    /* 선생님 이모지 + 말풍선 플로팅 */
+    .floating-wrapper {
       position: fixed;
-      bottom: 80px; /* ← 여기 숫자를 키움! */
+      bottom: 80px;
       right: 20px;
-      font-size: 36px;
+      text-align: center;
       cursor: pointer;
       z-index: 1000;
+    }
+
+    .floating-emoji {
+      font-size: 36px;
       transition: transform 0.3s;
     }
 
     .floating-emoji:hover {
       transform: scale(1.2) rotate(5deg);
+    }
+
+    .floating-label {
+      margin-top: 5px;
+      font-size: 13px;
+      background: #fff0f5;
+      color: #333;
+      padding: 4px 10px;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      display: inline-block;
     }
   </style>
 </head>
@@ -124,7 +144,7 @@
 
   <h1>📢 A학교 투쟁을 응원해주세요!</h1>
 
-  <!-- 투쟁 소개 -->
+  <!-- 투쟁 소개 버튼 -->
   <button class="btn" onclick="openIntro()">A학교 투쟁 알아보기</button>
 
   <!-- 후원 계좌 -->
@@ -158,8 +178,11 @@
     </div>
   </div>
 
-  <!-- 고정된 선생님 이모지 버튼 -->
-  <div class="floating-emoji" title="관련 영상 보기" onclick="openVideo()">👨‍🏫</div>
+  <!-- 고정된 선생님 이모지 + 말풍선 -->
+  <div class="floating-wrapper" onclick="openVideo()">
+    <div class="floating-emoji" title="관련 영상 보기">👨‍🏫</div>
+    <div class="floating-label">투쟁이 궁금하면?</div>
+  </div>
 
 </body>
 </html>
